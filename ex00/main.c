@@ -6,14 +6,25 @@
 /*   By: jlaine <jlaine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 02:38:49 by jlaine            #+#    #+#             */
-/*   Updated: 2024/02/10 21:18:01 by jlaine           ###   ########.fr       */
+/*   Updated: 2024/02/10 23:41:39 by argrouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	rush(int x, int y);
 
-int		main(void)
+int	main(void)
 {
-	rush(6, 9);
+	rush(12, 4);
+	rush(4, 18);
+	rush(3, 3);
+	rush(2, 7);
+	rush(9, 2);
+	rush(1, 13);
+	rush(8, 1);
+	rush(0, 6);
+	rush(8, 0);
+	rush(0, 0);
+	rush(8, -3);
+	rush(-5, -5);
 	return (0);
 }
