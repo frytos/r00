@@ -11,8 +11,37 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putchar(char c);
+void	display(int x, int y, int l, int c);
+void	rush(int x, int y);
+
+int main(void)
+{
+	printf("\nx = 4, y = 6\n\n");
+	rush(4,6);
+	printf("\nx = 8, y = 3\n\n");
+	rush(8,3);
+	printf("\nx = 2, y = 4\n\n");
+	rush(2,4);
+	printf("\nx = 5, y = 1\n\n");
+	rush(5,1);
+	printf("\nx = 1, y = 3\n\n");
+	rush(1,3);
+	printf("\nx = 0, y = 6\n\n");
+	rush(0,6);
+	printf("\nx = 8, y = 0\n\n");
+	rush(8,0);
+	printf("\nx = -4, y = 6\n\n");
+	rush(-4,6);
+	printf("\nx = 8, y = -3\n\n");
+	rush(8,-3);
+	printf("\nx = -5, y = -5\n\n");
+	rush(-5,-5);
+	return (0);
+}
+
 
 void	display(int x, int y, int l, int c)
 {
@@ -39,18 +68,26 @@ void	rush(int x, int y)
 {
 	int l;
 	int c;
+	char is_nl;
 
 	l = 0;
 	c = 0;
 	while (l < x)
 	{
+		is_nl = 0;
 		while (c < y)
 		{
 			display(x, y, l, c);
+			is_nl = '\n';
 			c++;
 		}
-		ft_putchar('\n');
+		ft_putchar(is_nl);
 		c = 0;
 		l++;
 	}
+}
+
+void    ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
