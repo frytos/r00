@@ -5,56 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaine <jlaine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 18:58:33 by jlaine            #+#    #+#             */
-/*   Updated: 2024/02/10 19:06:00 by jlaine           ###   ########.fr       */
+/*   Created: 2024/02/10 11:22:10 by jlaine            #+#    #+#             */
+/*   Updated: 2024/02/10 16:01:02 by jlaine           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
-#include "ft_putchar.h"
-#include "rush00.h"
 
+void	ft_putchar(char c);
+void	display(int x, int y, int l, int c);
 void	rush(int x, int y);
-void 	display(int x, int y, int c, int l);
-
-void	display(int x, int y, int c, int l)
-{
-	if (l == 0 && ( c == 0 || x - c == 1 ))
-	{
-		ft_putchar('A');
-	}
-	else if (y - l == 1 && ( c == 0 || x - c == 1 ))
-	{
-		ft_putchar('C');
-	}
-	else if (l == 0 || c == 0 || x - c == 1 || y - l == 1)
-	{
-		ft_putchar('B');
-	}
-	else if (x - c == 0)
-	{
-		ft_putchar('\n');
-	}
-	else
-	{
-		ft_putchar(' ');
-	}
-}
 
 void	rush(int x, int y)
 {
 	int l;
 	int c;
+	char is_nl;
 
 	l = 0;
-	while(l < y)
+	c = 0;
+	while (l < x)
 	{
-		c = 0;
-		while(c <= x)
+		is_nl = 0;
+		while (c < y)
 		{
-			display(x, y, c, l);
+			display(x, y, l, c);
+			is_nl = '\n';
 			c++;
 		}
+		ft_putchar(is_nl);
+		c = 0;
 		l++;
 	}
 }
 
+void	display(int x, int y, int l, int c)
+{
+	if ((l == 0 || l == x - 1) && (c == 0 || c == y - 1))
+	{
+		ft_putchar('o');
+	}
+	else if (l == 0 || l == x - 1)
+	{
+		ft_putchar('-');
+	}
+	else if (c == 0 || c == y - 1)
+	{
+		ft_putchar('|');
+	}
+	else 
+	{
+		ft_putchar(' ');
+	}
+
+}
