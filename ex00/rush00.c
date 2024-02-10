@@ -1,52 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*   rush00.c                                             :::      ::::::::   */
-/*                                                      :+:      :+:    :+:   */
+/*                                                        :::      ::::::::   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: argrouss <argrouss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlaine <jlaine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 03:48:13 by argrouss          #+#    #+#             */
-/*   Updated: 2024/02/10 04:23:29 by argrouss         ###   ########.fr       */
+/*   Created: 2024/02/10 18:58:33 by jlaine            #+#    #+#             */
+/*   Updated: 2024/02/10 19:06:00 by jlaine           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
+#include "ft_putchar.h"
+#include "rush00.h"
 
 void	rush(int x, int y);
+void 	display(int x, int y, int c, int l);
+
+void	display(int x, int y, int c, int l)
+{
+	if (l == 0 && ( c == 0 || x - c == 1 ))
+	{
+		ft_putchar('A');
+	}
+	else if (y - l == 1 && ( c == 0 || x - c == 1 ))
+	{
+		ft_putchar('C');
+	}
+	else if (l == 0 || c == 0 || x - c == 1 || y - l == 1)
+	{
+		ft_putchar('B');
+	}
+	else if (x - c == 0)
+	{
+		ft_putchar('\n');
+	}
+	else
+	{
+		ft_putchar(' ');
+	}
+}
 
 void	rush(int x, int y)
 {
-	int	n;
+	int l;
+	int c;
 
-	n = 0;
-	ft_putchar(111);
-	while(n < width - 2)
+	l = 0;
+	while(l < y)
 	{
-		ft_putchar(45);
-		n++
-	}
-	if(x > 2)
-	{
-		ft_putchar(111);
-	}
-	n = 0;
-	while(n < y)
-	{
-		ft_putchar(45);
-		while(n < width-2)
+		c = 0;
+		while(c <= x)
 		{
-			ft_putchar(45);
+			display(x, y, c, l);
+			c++;
 		}
-		ft_putchar(45);
-		n++;
+		l++;
 	}
-	ft_putchar(111);
-	n = 0;
-        while(n < width - 2)
-        {
-		ft_putchar(45);
-        	n++;
-	}
-        if (x > 2)
-        {
-                 ft_putchar(111);
-        }
 }
+

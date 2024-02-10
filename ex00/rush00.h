@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   rush00.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaine <jlaine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 03:36:17 by jlaine            #+#    #+#             */
-/*   Updated: 2024/02/10 03:41:37 by jlaine           ###   ########.fr       */
+/*   Created: 2024/02/10 21:19:07 by jlaine            #+#    #+#             */
+/*   Updated: 2024/02/10 21:28:34 by jlaine           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef RUSH00_H
+#define RUSH00_H
+
 #include <unistd.h>
 #include "ft_putchar.h"
 
-void	ft_putchar(char c);
+void	rush(int x, int y);
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#endif /* RUSH00_H */
