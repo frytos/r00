@@ -15,7 +15,7 @@
 
 void	rush(int x, int y);
 void    ft_putchar(char c);
-void print_line(int x, char *side_char, char *middle_char);
+void 	print_line(int x, char side_char, char middle_char);
 
 int main(void)
 {
@@ -45,7 +45,6 @@ int main(void)
 void	rush(int x, int y)
 {	
 	int	compteur;
-
 	if (x > 0 && y > 0) //Not printing anything if x or y is null or negative
 	{
 		
@@ -72,7 +71,7 @@ void	rush(int x, int y)
 	}
 }
 
-void print_line(int x, char *side_char, char *middle_char)
+void print_line(int x, char side_char, char middle_char)
 {
 	int compteur;
 	putchar(side_char);
