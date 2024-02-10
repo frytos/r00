@@ -6,7 +6,7 @@
 /*   By: argrouss <argrouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 03:48:13 by argrouss          #+#    #+#             */
-/*   Updated: 2024/02/10 08:35:17 by argrouss         ###   ########.fr       */
+/*   Updated: 2024/02/10 08:52:24 by argrouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void	rush(int x, int y);
 void    ft_putchar(char c);
+void	print_horizontal(int x);
+
 
 int main(void)
 {
@@ -31,23 +33,13 @@ int main(void)
 
 void	rush(int x, int y)
 {	
-	if (x < 1 || y < 1-1) return;
+	if (x < 1 || y < 1) return;
 	int	n;
 	int	m;
 
 	n = 0;
 	m = 0;
-	if (x > 1)
-	{
-		ft_putchar(111);
-	}
-	while(n < x - 2)
-	{
-		ft_putchar(45);
-		n++;
-	}
-	ft_putchar(111);
-	ft_putchar(10);
+	print_horizontal(x);
 	n = 0;
 	if(y > 1)
 	{
@@ -55,7 +47,7 @@ void	rush(int x, int y)
 		{
 		while(n < y - 2)
 			{
-				if (x > 2)
+				if (x > 1)
 				{
 					ft_putchar(124);
 				}
@@ -70,19 +62,26 @@ void	rush(int x, int y)
 				n++;
 			}
 		}
-		n = 0;
-		if (x > 1)
-		{
-			ft_putchar(111);
-		}
-		while(n < x - 2)
-		{
-			ft_putchar(45);
-			n++;
-		}
-		ft_putchar(111);
-		ft_putchar(10);
+		print_horizontal(x);
 	}
+}
+
+void	print_horizontal(int x)
+{
+	int	n;
+
+	n = 0;
+	if (x > 1)
+	{
+		ft_putchar(111);
+	}
+	while (n < x - 2)
+	{
+		ft_putchar(45);
+		n++;
+	}
+	ft_putchar(111);
+	ft_putchar(10);
 }
 
 void    ft_putchar(char c)
