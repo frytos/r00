@@ -6,53 +6,50 @@
 /*   By: jlaine <jlaine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:22:10 by jlaine            #+#    #+#             */
-/*   Updated: 2024/02/11 00:06:59 by argrouss         ###   ########.fr       */
+/*   Updated: 2024/02/11 14:29:52 by argrouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	rush(int x, int y);
 void	ft_putchar(char c);
 void	display(int x, int y, int c, int l);
-void	rush(int x, int y);
 
 void	rush(int x, int y)
 {
-	int		l;
-	int		c;
-	char	is_nl;
+	int	l;
+	int	c;
 
-	l = 0;
-	c = 0;
 	if (x > 0 && y > 0)
 	{
-		while (l < x)
+		l = 0;
+		c = 0;
+		while (l < y)
 		{
-			is_nl = 0;
-			while (c < y)
+			c = 0;
+			while (c < x)
 			{
-				display(x, y, l, c);
-				is_nl = '\n';
+				display(x, y, c, l);
 				c++;
 			}
-			ft_putchar(is_nl);
-			c = 0;
+			ft_putchar(10);
 			l++;
 		}
 	}
 }
 
-void	display(int x, int y, int l, int c)
+void	display(int x, int y, int c, int l)
 {
-	if ((l == 0 || l == x - 1) && (c == 0 || c == y - 1))
+	if ((l == 0 || l == y - 1) && (c == 0 || c == x - 1))
 	{
 		ft_putchar('o');
 	}
-	else if (l == 0 || l == x - 1)
+	else if (l == 0 || l == y - 1)
 	{
 		ft_putchar('-');
 	}
-	else if (c == 0 || c == y - 1)
+	else if (c == 0 || c == x - 1)
 	{
 		ft_putchar('|');
 	}

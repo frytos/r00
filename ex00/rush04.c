@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: argrouss <argrouss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlaine <jlaine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 19:15:54 by argrouss          #+#    #+#             */
-/*   Updated: 2024/02/11 10:50:10 by argrouss         ###   ########.fr       */
+/*   Created: 2024/02/10 19:15:54 by jlaine            #+#    #+#             */
+/*   Updated: 2024/02/11 15:58:44 by argrouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,14 @@ void	display(int x, int y, int c, int l)
 {
 	if ((l == 0 && c == 0) || (x - c == 1 && y - l == 1))
 	{
-		ft_putchar('A');
+		if ((l > 0 && c == 0) || (c > 0 && l == 0))
+		{
+			ft_putchar('C');
+		}
+		else
+		{
+			ft_putchar('A');
+		}
 	}
 	else if ((y - l == 1 && c == 0) || (x - c == 1 && l == 0))
 	{

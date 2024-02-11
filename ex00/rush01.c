@@ -18,8 +18,8 @@ void	display(int x, int y, int c, int l);
 
 void	rush(int x, int y)
 {
-	int		l;
-	int		c;
+	int	l;
+	int	c;
 
 	if (x > 0 && y > 0)
 	{
